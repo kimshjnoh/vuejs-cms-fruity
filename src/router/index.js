@@ -34,6 +34,11 @@ const routes = [
     component: () => import('@/views/simple-table/SimpleTable.vue'),
   },
   {
+    path: '/products',
+    name: 'products',
+    component: () => import('@/views/products/Product.vue'),
+  },
+  {
     path: '/form-layouts',
     name: 'form-layouts',
     component: () => import('@/views/form-layouts/FormLayouts.vue'),

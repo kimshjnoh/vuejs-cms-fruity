@@ -48,22 +48,16 @@
         :icon="icons.mdiAccountCogOutline"
       ></nav-menu-link>
       <nav-menu-group
-        title="Pages"
+        title="Management"
         :icon="icons.mdiFileOutline"
       >
         <nav-menu-link
-          title="Login"
-          :to="{ name: 'pages-login' }"
-          target="_blank"
+          title="Products"
+          :to="{ name: 'products' }"
         ></nav-menu-link>
         <nav-menu-link
-          title="Register"
+          title="Orders"
           :to="{ name: 'pages-register' }"
-          target="_blank"
-        ></nav-menu-link>
-        <nav-menu-link
-          title="Error"
-          :to="{ name: 'error-404' }"
           target="_blank"
         ></nav-menu-link>
       </nav-menu-group>

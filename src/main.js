@@ -1,5 +1,7 @@
 import '@/plugins/vue-composition-api'
 import '@/styles/styles.scss'
+import './plugins/vue-data-table'
+import './plugins/vue-sax'
 import Vue from 'vue'
 import App from './App.vue'
 import vuetify from './plugins/vuetify'
