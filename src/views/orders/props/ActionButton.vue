@@ -4,7 +4,7 @@
       <i class="fa fa-eye"></i>
     </button>
     <vs-popup fullscreen title="Order Detail" :active.sync="activeView">
-      <order-detail-model v-show="activeView" :id="data.id"></order-detail-model>
+      <order-detail-model v-if="activeView" :id="data.id"></order-detail-model>
     </vs-popup>
   </div>
 </template>
@@ -25,7 +25,6 @@ export default {
   },
   methods: {
     handleAction(actionName) {
-      console.log(this.data.id)
       switch (actionName) {
         case 'view':
           this.activeView = true
@@ -35,6 +34,7 @@ export default {
       }
     },
   },
+
   props: {
     data: {
       type: Object,
