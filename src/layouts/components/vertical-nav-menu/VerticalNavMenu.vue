@@ -35,6 +35,7 @@
         :icon="icons.mdiAccountCogOutline"
       ></nav-menu-link>
       <nav-menu-group title="Management" :icon="icons.mdiFileOutline">
+        <nav-menu-link title="Categories" :to="{ name: 'categories' }"></nav-menu-link>
         <nav-menu-link title="Products" :to="{ name: 'products' }"></nav-menu-link>
         <nav-menu-link title="Orders" :to="{ name: 'orders' }"></nav-menu-link>
       </nav-menu-group>

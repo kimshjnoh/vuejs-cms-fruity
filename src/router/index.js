@@ -34,6 +34,11 @@ const routes = [
     component: () => import('@/views/simple-table/SimpleTable.vue'),
   },
   {
+    path: '/categories',
+    name: 'categories',
+    component: () => import('@/views/categories/Category.vue'),
+  },
+  {
     path: '/products',
     name: 'products',
     component: () => import('@/views/products/Product.vue'),

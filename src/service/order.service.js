@@ -2,7 +2,7 @@ import axios from 'axios'
 
 const API_URL = 'http://100.26.42.214:3000/cms/v1'
 
-class ProductService {
+class OrderService {
   getOrders() {
     return axios.get(`${API_URL}/orders`)
   }
@@ -15,4 +15,4 @@ class ProductService {
   }
 }
 
-export default new ProductService()
+export default new OrderService()
