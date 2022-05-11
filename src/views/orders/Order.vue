@@ -11,7 +11,9 @@
 import OrderService from '@/service/order.service'
 import Spinner from '@/layouts/components/Spinner.vue'
 import ActionButtonsOrder from './props/ActionButton.vue'
-
+import RenderPrice from './props/RenderPrice.vue'
+import RenderStatus from './props/RenderStatus.vue'
+import RenderTime from './props/RenderTime.vue'
 export default {
   data() {
     return {
@@ -43,12 +45,21 @@ export default {
           {
             key: 'status',
             title: 'Status',
-            sortable: false,
+            sortable: true,
+            searchable: true,
+            component: RenderStatus,
           },
           {
             key: 'total_price',
             title: 'Price',
             sortable: false,
+            component: RenderPrice,
+          },
+          {
+            key: 'created_at',
+            title: 'Created At',
+            sortable: true,
+            component: RenderTime,
           },
           {
             key: 'id',

@@ -10,6 +10,9 @@ class ProductService {
   getOrder(id) {
     return axios.get(`${API_URL}/orders/${id}`)
   }
+  updateStatus(id, status) {
+    return axios.put(`${API_URL}/orders/${id}/update-status`, { status })
+  }
 }
 
 export default new ProductService()
