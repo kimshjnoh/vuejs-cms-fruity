@@ -50,6 +50,16 @@ const routes = [
     component: () => import('@/views/orders/Order.vue'),
   },
   {
+    path: '/stocks',
+    name: 'stocks',
+    component: () => import('@/views/stocks/Stock.vue'),
+  },
+  {
+    path: '/stock-reports',
+    name: 'stock-reports',
+    component: () => import('@/views/stock-reports/StockReport.vue'),
+  },
+  {
     path: '/form-layouts',
     name: 'form-layouts',
     component: () => import('@/views/form-layouts/FormLayouts.vue'),

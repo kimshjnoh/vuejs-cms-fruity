@@ -38,6 +38,8 @@
         <nav-menu-link title="Categories" :to="{ name: 'categories' }"></nav-menu-link>
         <nav-menu-link title="Products" :to="{ name: 'products' }"></nav-menu-link>
         <nav-menu-link title="Orders" :to="{ name: 'orders' }"></nav-menu-link>
+        <nav-menu-link title="Stocks" :to="{ name: 'stocks' }"></nav-menu-link>
+        <nav-menu-link title="Stock Reports" :to="{ name: 'stock-reports' }"></nav-menu-link>
       </nav-menu-group>
       <nav-menu-section-title title="USER INTERFACE"></nav-menu-section-title>
       <nav-menu-link title="Typography" :to="{ name: 'typography' }" :icon="icons.mdiAlphaTBoxOutline"></nav-menu-link>

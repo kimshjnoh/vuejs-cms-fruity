@@ -46,7 +46,6 @@ export default {
             key: 'status',
             title: 'Status',
             sortable: true,
-            searchable: true,
             component: RenderStatus,
           },
           {
