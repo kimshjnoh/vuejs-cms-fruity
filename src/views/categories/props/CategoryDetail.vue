@@ -6,7 +6,7 @@
       </v-col>
 
       <v-col cols="12" md="7">
-        <p class="subtitle-1 text-truncate mb-0"> {{ newName || data.name }} </p>
+        <p class="subtitle-1 text-truncate mb-0">{{ newName || data.name }}</p>
       </v-col>
       <v-col cols="12" md="2">
         <vs-button @click="activePrompt1 = true" color="primary" type="border"><i class="fa fa-edit"></i></vs-button>
@@ -16,14 +16,14 @@
       </v-col>
 
       <v-col cols="12" md="7">
-        <p class="subtitle-1 text-truncate mb-0"> {{ newImageURL || data.image_url }} </p>
+        <p class="subtitle-1 text-truncate mb-0">{{ newImageURL || data.image_url }}</p>
       </v-col>
       <v-col cols="12" md="2">
         <vs-button @click="activePrompt2 = true" color="primary" type="border"><i class="fa fa-edit"></i></vs-button>
       </v-col>
       <v-col cols="12" md="3">
         <label for="price">Children </label>
-        <i class="fa fa-plus" v-on:click="active= true"></i>
+        <i class="fa fa-plus" v-on:click="active = true"></i>
       </v-col>
       <v-col cols="12" md="9">
         <vs-table stripe :data="categories">
@@ -42,7 +42,7 @@
             </vs-th>
           </template>
 
-          <template slot-scope="{data}">
+          <template slot-scope="{ data }">
             <vs-tr :key="indextr" v-for="(tr, indextr) in data">
               <vs-td>
                 {{ indextr + 1 }}
@@ -53,7 +53,7 @@
               </vs-td>
 
               <vs-td>
-                {{ data[indextr].image_url }}
+                <render-image :data="tr"></render-image>
               </vs-td>
 
               <vs-td>
@@ -75,14 +75,12 @@
         Enter Value
         <vs-input placeholder="Value" v-model="newName" />
       </div>
-
     </vs-prompt>
     <vs-prompt @cancel="newImageURL = ''" @accept="updateInfo" :active.sync="activePrompt2">
       <div class="con-exemple-prompt">
         Enter Value
         <vs-input placeholder="Value" v-model="newImageURL" />
       </div>
-
     </vs-prompt>
     <vs-popup title="New Category" :active.sync="active">
       <modal-category v-if="active"></modal-category>
@@ -92,10 +90,12 @@
 <script>
 import CategoryService from '@/service/category.service'
 import ModalCategory from './ModalCategory.vue'
+import RenderImage from './RenderImage.vue'
 export default {
   name: 'CategoryDetailModal',
   components: {
-    ModalCategory
+    ModalCategory,
+    RenderImage,
   },
   data() {
     return {
@@ -105,7 +105,7 @@ export default {
       newImageURL: null,
       activePrompt1: false,
       activePrompt2: false,
-      active: false
+      active: false,
     }
   },
   props: {
@@ -128,12 +128,12 @@ export default {
       switch (actionName) {
         case 'edit':
           this.$emit('edit', this.data)
-          break;
+          break
         case 'delete':
           this.$emit('delete', this.data)
-          break;
+          break
         default:
-          break;
+          break
       }
     },
     updateInfo() {
@@ -141,7 +141,7 @@ export default {
         name: this.newName || this.data.name,
         image_url: this.newImageURL || this.data.image_url,
       })
-    }
+    },
   },
 }
 </script>

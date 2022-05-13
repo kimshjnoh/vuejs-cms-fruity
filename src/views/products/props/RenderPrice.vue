@@ -22,7 +22,7 @@ export default {
   },
   computed: {
     price() {
-      return this.data.price || this.data.total_price
+      return this.data.price
     },
   },
 }
