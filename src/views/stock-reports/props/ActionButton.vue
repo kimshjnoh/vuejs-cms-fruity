@@ -3,22 +3,18 @@
         <button class="btn btn-outline-primary" @click="handleAction('edit')">
             <i class="fa fa-edit"></i>
         </button>
-        <vs-popup  title="Edit Quantity" :active.sync="activeEdit">
-            <div class="centerx labelx">
-                <vs-input label="Quantity" placeholder="123" v-model="value" />
-            </div>
-            
-            <v-btn class="mx-2 " outlined @click="handleSubmit()">
-                Submit
-            </v-btn>
-        </vs-popup>
+         <ModalStockReport :data="data" :active="activeEdit" :isNew="false"></ModalStockReport>
     </div>
 
 </template>
 <script>
 import stockService from '@/service/stock.service';
+import ModalStockReport from './ModalStockReport.vue';
 export default {
     name: "ActionButtonStock",
+    components: {
+        ModalStockReport,
+    },
     data() {
         return {
             activeEdit: false,

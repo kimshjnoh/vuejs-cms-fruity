@@ -1,5 +1,11 @@
 <template>
   <v-row>
+    <v-col cols="12" class="text-end">
+      <ModalStockReport :active="active" :isNew="true"></ModalStockReport>
+      <v-btn color="primary" v-on:click="active = true">
+        Add New
+      </v-btn>
+    </v-col>
     <v-col cols="12">
       <data-table v-bind="paramTable" />
     </v-col>
@@ -12,6 +18,7 @@ import Spinner from '@/layouts/components/Spinner.vue'
 import ActionButtonCategory from './props/ActionButton.vue'
 import RenderProduct from './props/RenderProduct.vue'
 import RenderTimeVue from '../orders/props/RenderTime.vue'
+import ModalStockReport from './props/ModalStockReport.vue'
 export default {
   data() {
     return {
@@ -19,6 +26,9 @@ export default {
       stockReports: [],
       active: false,
     }
+  },
+  components: {
+    ModalStockReport
   },
   mounted() {
     stockReportService.getStockReports().then(res => {

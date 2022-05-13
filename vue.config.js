@@ -1,6 +1,13 @@
 const { mergeSassVariables } = require('@vuetify/cli-plugin-utils')
 
 module.exports = {
+  // devServer: {
+  //   open: process.platform === 'darwin',
+  //   host: '0.0.0.0',
+  //   port: 8080, // CHANGE YOUR PORT HERE!
+  //   https: true,
+  //   hotOnly: false,
+  // },
   publicPath: process.env.NODE_ENV === 'production' ? '/' : '/',
   lintOnSave: false,
   transpileDependencies: ['vuetify'],

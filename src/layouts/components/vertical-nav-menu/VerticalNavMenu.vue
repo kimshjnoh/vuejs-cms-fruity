@@ -41,6 +41,7 @@
         <nav-menu-link title="Stocks" :to="{ name: 'stocks' }"></nav-menu-link>
         <nav-menu-link title="Stock Reports" :to="{ name: 'stock-reports' }"></nav-menu-link>
       </nav-menu-group>
+      
     </v-list>
   </v-navigation-drawer>
 </template>
