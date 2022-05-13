@@ -1,6 +1,7 @@
 const { mergeSassVariables } = require('@vuetify/cli-plugin-utils')
 
 module.exports = {
+  // for disable cors
   // devServer: {
   //   open: process.platform === 'darwin',
   //   host: '0.0.0.0',
