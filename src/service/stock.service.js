@@ -9,7 +9,6 @@ class StockService {
   editStock(id, data) {
     return axios.put(`${API_URL}/stocks/${id}`, data)
   }
-
 }
 
 export default new StockService()
