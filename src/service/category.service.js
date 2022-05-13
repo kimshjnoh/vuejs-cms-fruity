@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API_URL = 'http://100.26.42.214:3000/cms/v1'
+const API_URL = 'https://fruityy.ddns.net/cms/v1'
 
 class CategoryService {
   getCategories() {
@@ -16,7 +16,6 @@ class CategoryService {
   createCategory(data) {
     return axios.post(`${API_URL}/categories`, data)
   }
-
 }
 
 export default new CategoryService()
