@@ -16,7 +16,7 @@
                 </v-col>
 
                 <v-col cols="12" md="9">
-                    <v-text-field id="price" v-model="product.price" outlined dense placeholder="Price" hide-details>
+                    <v-text-field id="price" v-model="product.price" type="number" outlined dense placeholder="Price" hide-details>
                     </v-text-field>
                 </v-col>
 
@@ -47,7 +47,7 @@
                 </v-col>
 
                 <v-col offset-md="3" cols="12" class="text-center">
-                    <v-btn class="mx-2 " outlined>
+                    <v-btn class="mx-2 " outlined @click="submit()">
                         Submit
                     </v-btn>
                 </v-col>

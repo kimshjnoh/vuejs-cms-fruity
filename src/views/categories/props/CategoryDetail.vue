@@ -22,6 +22,9 @@
         <vs-button @click="activePrompt2 = true" color="primary" type="border"><i class="fa fa-edit"></i></vs-button>
       </v-col>
       <v-col cols="12" md="3">
+        <vs-popup title="New Category" :active.sync="active">
+          <modal-category v-if="active"></modal-category>
+        </vs-popup>
         <label for="price">Children </label>
         <i class="fa fa-plus" v-on:click="active = true"></i>
       </v-col>
@@ -82,9 +85,6 @@
         <vs-input placeholder="Value" v-model="newImageURL" />
       </div>
     </vs-prompt>
-    <vs-popup title="New Category" :active.sync="active">
-      <modal-category v-if="active"></modal-category>
-    </vs-popup>
   </v-form>
 </template>
 <script>
