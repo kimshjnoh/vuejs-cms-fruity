@@ -6,7 +6,7 @@ class OrderService {
   getOrders() {
     return axios.get(`${API_URL}/orders`)
   }
-
+  
   getOrder(id) {
     return axios.get(`${API_URL}/orders/${id}`)
   }
