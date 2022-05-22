@@ -14,11 +14,11 @@
                 <label for="price">Image URL</label>
             </v-col>
             <v-col cols="12" md="9">
-                <v-text-field id="name" v-model="category.name" outlined dense placeholder="Image URL" hide-details>
+                <v-text-field id="image_url" v-model="category.image_url" outlined dense placeholder="Image URL" hide-details>
                 </v-text-field>
             </v-col>
             <v-col offset-md="3" cols="12" class="text-center">
-                <v-btn class="mx-2 " outlined >
+                <v-btn class="mx-2 " outlined @click="submit()">
                     Submit
                 </v-btn>
             </v-col>
