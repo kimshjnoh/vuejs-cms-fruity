@@ -48,15 +48,14 @@ export default {
             })
         },
         handleDelete() {
-            console.log(this.data.id)
-            // categoryService.delete(this.data.id).then(res => {
-            //     this.$vs.notify({
-            //         title: 'Success deleted',
-            //         text: `Product ${this.data.name} has been deleted`,
-            //         color: 'success',
-            //         icon: 'check'
-            //     })
-            // })
+            categoryService.delete(this.data.id).then(res => {
+                this.$vs.notify({
+                    title: 'Success deleted',
+                    text: `Product ${this.data.name} has been deleted`,
+                    color: 'success',
+                    icon: 'check'
+                })
+            })
         }
 
     },

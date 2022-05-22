@@ -16,6 +16,9 @@ class CategoryService {
   createCategory(data) {
     return axios.post(`${API_URL}/categories`, data)
   }
+  delete(id) {
+    return axios.delete(`${API_URL}/categories/${id}`)
+  }
 }
 
 export default new CategoryService()
