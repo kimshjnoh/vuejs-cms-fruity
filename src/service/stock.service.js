@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API_URL = 'https://fruityy.ddns.net/cms/v1'
+const API_URL = 'https://be.fruity.works/cms/v1'
 
 class StockService {
   getStocks() {
