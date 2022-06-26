@@ -41,6 +41,7 @@ export default {
                         key: "product",
                         title: "Name",
                         sortable: true,
+                        searchable: true,
                         component: RenderName,
                     },
                     {
