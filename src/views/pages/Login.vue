@@ -4,10 +4,7 @@
       <v-card class="auth-card">
         <!-- logo -->
         <v-card-title class="d-flex align-center justify-center py-7">
-          <router-link
-            to="/"
-            class="d-flex align-center"
-          >
+          <router-link to="/" class="d-flex align-center">
             <v-img
               :src="require('@/assets/images/logos/fruity.png')"
               max-height="30px"
@@ -56,19 +53,13 @@
               @click:append="isPasswordVisible = !isPasswordVisible"
             ></v-text-field>
 
-            <v-btn
-              block
-              color="primary"
-              class="mt-6"
-            >
+            <v-btn block color="primary" class="mt-6" @click="onSubmit()">
               Login
             </v-btn>
           </v-form>
         </v-card-text>
 
         <!-- create new account  -->
-
-   
       </v-card>
     </div>
 
@@ -76,24 +67,14 @@
     <img
       class="auth-mask-bg"
       height="173"
-      :src="require(`@/assets/images/misc/mask-${$vuetify.theme.dark ? 'dark':'light'}.png`)"
-    >
+      :src="require(`@/assets/images/misc/mask-${$vuetify.theme.dark ? 'dark' : 'light'}.png`)"
+    />
 
     <!-- tree -->
-    <v-img
-      class="auth-tree"
-      width="247"
-      height="185"
-      src="@/assets/images/misc/tree.png"
-    ></v-img>
+    <v-img class="auth-tree" width="247" height="185" src="@/assets/images/misc/tree.png"></v-img>
 
     <!-- tree  -->
-    <v-img
-      class="auth-tree-3"
-      width="377"
-      height="289"
-      src="@/assets/images/misc/tree-3.png"
-    ></v-img>
+    <v-img class="auth-tree-3" width="377" height="289" src="@/assets/images/misc/tree-3.png"></v-img>
   </div>
 </template>
 
@@ -102,6 +83,8 @@
 import { mdiFacebook, mdiTwitter, mdiGithub, mdiGoogle, mdiEyeOutline, mdiEyeOffOutline } from '@mdi/js'
 import { ref } from '@vue/composition-api'
 
+const validEmail = 'kimshinoh@be.fruity.works'
+const validPassword = 'mtruong0912@'
 export default {
   setup() {
     const isPasswordVisible = ref(false)
@@ -130,6 +113,24 @@ export default {
       },
     ]
 
+    // eslint-disable-next-line consistent-return
+    function onSubmit() {
+      if (email.value !== validEmail || password.value !== validPassword) {
+        return this.$vs.notify({
+          title: 'Login Failed',
+          text: 'Email or password is incorrect',
+          color: 'danger',
+          icon: 'error',
+        })
+      }
+
+      localStorage.setItem('isLoggedIn', true)
+      localStorage.setItem('email', validEmail)
+      localStorage.setItem('password', validPassword)
+
+      this.$router.push('/dashboard')
+    }
+
     return {
       isPasswordVisible,
       email,
@@ -140,6 +141,7 @@ export default {
         mdiEyeOutline,
         mdiEyeOffOutline,
       },
+      onSubmit,
     }
   },
 }
