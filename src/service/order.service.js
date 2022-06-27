@@ -11,7 +11,7 @@ class OrderService {
     return axios.get(`${API_URL}/orders/${id}`)
   }
   updateStatus(id, status) {
-    return axios.put(`${API_URL}/orders/${id}/change-status`, { status })
+    return axios.put(`${API_URL}/orders/${id}/change-status`, { status, note: 'Edit Status', user_id: '0c9a05cb-407c-43c1-b855-88a034ad8f01' })
   }
 }
 
