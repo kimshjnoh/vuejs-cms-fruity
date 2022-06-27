@@ -4,22 +4,23 @@
             <v-col cols="12" md="12">
                 <ul class="leftx" style="list-style: none;">
                     <li>
-                        <vs-radio color="success" v-model="currentStatus" vs-value="processing">Processing</vs-radio>
+                        <vs-radio color="success" v-model="status" vs-value="processing">Processing
+                        </vs-radio>
                     </li>
                     <li>
-                        <vs-radio color="danger" v-model="currentStatus" vs-value="delivered">Delivered</vs-radio>
+                        <vs-radio color="danger" v-model="status" vs-value="delivered">Delivered</vs-radio>
                     </li>
                     <li>
-                        <vs-radio color="warning" v-model="currentStatus" vs-value="shipping">Shipping</vs-radio>
+                        <vs-radio color="warning" v-model="status" vs-value="shipping">Shipping</vs-radio>
                     </li>
                     <li>
-                        <vs-radio color="dark" v-model="currentStatus" vs-value="cancelled">Cancelled</vs-radio>
+                        <vs-radio color="dark" v-model="status" vs-value="cancelled">Cancelled</vs-radio>
                     </li>
                 </ul>
             </v-col>
 
             <v-col cols="12" md="12" style="text-align: center">
-                <v-btn class="mx-2 " outlined>
+                <v-btn class="mx-2 " outlined v-on:click="handleUpdateStatus()">
                     Submit
                 </v-btn>
             </v-col>
@@ -35,33 +36,29 @@ export default {
     name: 'EditStatusModal',
 
     props: {
-        data: {
+        status: {
+            type: String,
+            required: true,
+        },
+        id: {
             type: String,
             required: true,
         },
     },
     data() {
         return {
-            newStatus: ''
+            status: cloneDeep(this.status),
         }
     },
-    computed: {
-        currentStatus: {
-            get() {
-                return cloneDeep(this.data.status)
-            },
-            set(value) {
-                this.newStatus = value
-                return value
-            }
-        }
-    },
+    // computed: {
+    //     currentStatus
+    // },
     methods: {
         handleUpdateStatus() {
-            if(!newStatus) {
+            if (!this.status) {
                 return
             }
-            OrderService.updateStatus(this.data.id, this.data.newStatus).then(res => {
+            OrderService.updateStatus(this.id, this.status).then(res => {
                 this.$emit('reload')
             })
         }

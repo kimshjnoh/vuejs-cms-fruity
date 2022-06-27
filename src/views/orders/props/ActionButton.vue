@@ -10,7 +10,7 @@
       <order-detail-model v-if="activeView" :id="data.id"></order-detail-model>
     </vs-popup>
     <vs-popup title="Status" :active.sync="activeEdit" >
-      <edit-status-modal v-if="activeEdit" :status="data.status"></edit-status-modal>
+      <edit-status-modal v-if="activeEdit" :status="data.status" :id="data.id"></edit-status-modal>
     </vs-popup>
   </div>
 </template>
