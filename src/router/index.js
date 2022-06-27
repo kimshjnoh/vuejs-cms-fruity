@@ -6,8 +6,10 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    redirect: 'dashboard',
+    redirect: 'login',
   },
+
+  { path: '/login', name: 'Login Page', component: () => import('@/views/pages/Login.vue') },
   {
     path: '/dashboard',
     name: 'dashboard',
