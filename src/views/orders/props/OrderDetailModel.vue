@@ -39,6 +39,13 @@
         <p class="subtitle-1 text-truncate mb-0"> {{ formatPrice(order.total_price) }} </p>
       </v-col>
       <v-col cols="12" md="3">
+        <label for="price">Payment Method</label>
+      </v-col>
+
+      <v-col cols="12" md="9">
+        <p class="subtitle-1 text-truncate mb-0"> {{ getPayment() }} </p>
+      </v-col>
+      <v-col cols="12" md="3">
         <label for="order">Products</label>
       </v-col>
 
@@ -85,6 +92,7 @@
 </template>
 <script>
 import OrderService from '@/service/order.service'
+import { get } from 'lodash'
 export default {
   name: 'OrderDetailModel',
   setup() {
@@ -120,11 +128,13 @@ export default {
       const res = await OrderService.getOrder(this.id)
 
       this.order = res.data.order
-      console.log(this.order)
       this.isLoading = false
     },
     formatPrice(x) {
       return x.toLocaleString('it-IT', { style: 'currency', currency: 'VND' });
+    },
+    getPayment() {
+      return get(this.order, 'payment.name');
     }
   },
 }

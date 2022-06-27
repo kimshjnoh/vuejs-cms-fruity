@@ -13,6 +13,7 @@ import Spinner from '@/layouts/components/Spinner.vue'
 import ActionButtonsOrder from './props/ActionButton.vue'
 import RenderPrice from './props/RenderPrice.vue'
 import RenderStatus from './props/RenderStatus.vue'
+import RenderPayment from './props/RenderPayment.vue'
 import RenderTime from './props/RenderTime.vue'
 export default {
   data() {
@@ -25,6 +26,7 @@ export default {
   mounted() {
     OrderService.getOrders().then(res => {
       this.isLoading = false
+      console.log(res.data.orders)
       this.orders = res.data.orders
     })
   },
@@ -53,6 +55,12 @@ export default {
             title: 'Price',
             sortable: false,
             component: RenderPrice,
+          },
+          {
+            key: 'payment',
+            title: 'Payment Method',
+            sortable: false,
+            component: RenderPayment,
           },
           {
             key: 'created_at',
