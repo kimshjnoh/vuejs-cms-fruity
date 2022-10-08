@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API_URL = 'http://localhost:3000/cms/v1'
+const API_URL = 'http://128.199.145.119:3000/cms/v1'
 
 class OrderService {
   getOrders() {

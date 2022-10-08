@@ -83,8 +83,8 @@
 import { mdiFacebook, mdiTwitter, mdiGithub, mdiGoogle, mdiEyeOutline, mdiEyeOffOutline } from '@mdi/js'
 import { ref } from '@vue/composition-api'
 
-const validEmail = 'truongmanh0912@gmail.com'
-const validPassword = 'mtruong0912'
+const validEmail = 'hainghiatan@gmail.com'
+const validPassword = 'haigay'
 export default {
   setup() {
     const isPasswordVisible = ref(false)
