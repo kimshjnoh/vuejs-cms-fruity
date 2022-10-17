@@ -1,5 +1,6 @@
 import axios from 'axios'
-import { API_URL } from '../libs/axios'
+
+const API_URL = 'https://fruity.es.us-central1.gcp.cloud.es.io:9243'
 
 class SearchProductService {
   search(keyword) {
@@ -17,7 +18,7 @@ class SearchProductService {
         headers: {
           'Content-Type': 'application/json',
           Accept: 'application/json',
-          Authorization: 'Apikey aGtTVWdZRUJNdmY4TlZyTkFmQ3U6cjd1NTFFaUVSbTJ1TW81WnZCT2FqQQ==',
+          Authorization: 'Apikey QlpKYndvTUJ5bkEwLU1xSHpZYTU6bWRUZ3IzTlBTM0dpV21tUTBzdlRXUQ==',
           'Access-Control-Allow-Origin': '*',
         },
       },
