@@ -1,17 +1,16 @@
 import axios from 'axios'
-
-const API_URL = 'http://128.199.145.119:3000/cms/v1'
+import axiosInstance from '../libs/axios'
 
 class OrderService {
   getOrders() {
-    return axios.get(`${API_URL}/orders`)
+    return axiosInstance.get(`/orders`)
   }
 
   getOrder(id) {
-    return axios.get(`${API_URL}/orders/${id}`)
+    return axiosInstance.get(`/orders/${id}`)
   }
   updateStatus(id, status) {
-    return axios.put(`${API_URL}/orders/${id}/change-status`, {
+    return axiosInstance.put(`/orders/${id}/change-status`, {
       status,
       note: 'Edit Status',
       user_id: '0c9a05cb-407c-43c1-b855-88a034ad8f01',

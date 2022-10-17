@@ -1,13 +1,11 @@
-import axios from 'axios'
-
-const API_URL = 'http://128.199.145.119:3000/cms/v1'
+import axiosInstance from '../libs/axios'
 
 class StockService {
   getStocks() {
-    return axios.get(`${API_URL}/stocks`)
+    return axiosInstance.get(`/stocks`)
   }
   editStock(id, data) {
-    return axios.put(`${API_URL}/stocks/${id}`, data)
+    return axiosInstance.put(`/stocks/${id}`, data)
   }
 }
 

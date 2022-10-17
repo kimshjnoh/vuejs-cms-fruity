@@ -1,23 +1,21 @@
-import axios from 'axios'
-
-const API_URL = 'http://128.199.145.119:3000/cms/v1'
+import axiosInstance from '../libs/axios'
 
 class CategoryService {
   getCategories() {
-    return axios.get(`${API_URL}/categories`)
+    return axiosInstance.get(`/categories`)
   }
   getChildCategory(id) {
     console.log(id)
-    return axios.get(`${API_URL}/categories?parent_id=${id}`)
+    return axiosInstance.get(`/categories?parent_id=${id}`)
   }
   updateCategory(id, data) {
-    return axios.put(`${API_URL}/categories/${id}`, data)
+    return axiosInstance.put(`/categories/${id}`, data)
   }
   createCategory(data) {
-    return axios.post(`${API_URL}/categories`, data)
+    return axiosInstance.post(`/categories`, data)
   }
   delete(id) {
-    return axios.delete(`${API_URL}/categories/${id}`)
+    return axiosInstance.delete(`/categories/${id}`)
   }
 }
 

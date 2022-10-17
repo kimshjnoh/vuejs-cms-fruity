@@ -1,19 +1,18 @@
 import axios from 'axios'
-
-const API_URL = 'http://128.199.145.119:3000/cms/v1'
+import axiosInstance from '../libs/axios'
 
 class ProductService {
   getProducts() {
-    return axios.get(API_URL + '/products')
+    return axiosInstance.get(API_URL + '/products')
   }
   deleteProduct(id) {
-    return axios.delete(API_URL + '/products/' + id)
+    return axiosInstance.delete(API_URL + '/products/' + id)
   }
   createProduct(product) {
-    return axios.post(API_URL + '/products', product)
+    return axiosInstance.post(API_URL + '/products', product)
   }
   updateProduct(product) {
-    return axios.put(API_URL + '/products/' + product.id, product)
+    return axiosInstance.put(API_URL + '/products/' + product.id, product)
   }
 }
 
