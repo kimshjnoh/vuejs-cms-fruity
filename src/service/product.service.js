@@ -1,18 +1,21 @@
-import axios from 'axios'
+/* eslint-disable class-methods-use-this */
 import axiosInstance from '../libs/axios'
 
 class ProductService {
   getProducts() {
-    return axiosInstance.get(API_URL + '/products')
+    return axiosInstance.get('/products')
   }
+
   deleteProduct(id) {
-    return axiosInstance.delete(API_URL + '/products/' + id)
+    return axiosInstance.delete(`/products/${id}`)
   }
+
   createProduct(product) {
-    return axiosInstance.post(API_URL + '/products', product)
+    return axiosInstance.post('/products', product)
   }
+
   updateProduct(product) {
-    return axiosInstance.put(API_URL + '/products/' + product.id, product)
+    return axiosInstance.put(`/products/${product.id}`, product)
   }
 }
 
