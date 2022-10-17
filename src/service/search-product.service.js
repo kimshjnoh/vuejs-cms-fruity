@@ -3,9 +3,10 @@ import axios from 'axios'
 const API_URL = 'https://fruity.es.us-central1.gcp.cloud.es.io:9243'
 
 class SearchProductService {
+  // eslint-disable-next-line class-methods-use-this
   search(keyword) {
     return axios.post(
-      API_URL + '/products/_search',
+      `${API_URL}/products/_search`,
       {
         query: {
           multi_match: {
